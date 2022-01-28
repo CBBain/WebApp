@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Development Goals</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery.backstretch.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="assets/css/master.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/carousel.css">
+</head>
+
+<body>
+
+  <header>
+    <img src="sdg.png" height=100>
+  </header>
+
+  <main>
+    <div id='map' style='width: 70%; margin: 0 auto;'></div>
+  </main>
+
+  <!--CAROUSEL TEMPLATE FROM file:///Users/rael/Downloads/bootstrap-carousel-multiple-items/index.html-->
+  <!--Source for collapsing tiles: https://www.w3schools.com/howto/howto_js_collapsible.asp-->
+  <!-- Top content -->
+
+  <div class="top-content">
+    <div class="container-fluid">
+      <div id="carousel-example" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>NO POVERTY</button>
+            <div class="content">
+              <p>1. No Poverty – To bring basic human needs to everyone such as access to food, shelter and sanitation. Today, as many as 10% of people in the world are still living under the poverty line, estimated to be as high as 7% by 2030. In
+                Dundee, as many as a third of children are living in poverty. The coronavirus pandemic has exacerbated the issue of poverty. <br><a href="https://cpag.org.uk/scotland">CPAG Scotland</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>ZERO HUNGER</button>
+            <div class="content">
+              <p>2. End hunger, achieve food security and improved nutrition and promote sustainable agriculture - This sustainable development goal is important as it not only covers ending hunger but to allow people to continue to feed themselves
+                self-sufficiently and reliably, without destroying the land in the process. In the 6 years from 2014-2020 we have seen an increase in malnourished people, from 607 million people to as many as 811 million.<br><a
+                  href="https://www.actionagainsthunger.org/">Action Against Hunger</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Calpol"><br>GOOD HEALTH AND WELL-BEING</button>
+            <div class="content">
+              <p>3. Ensure healthy lives and promote well-being for all at all ages - This goal is important for helping those that do not have access to appropriate medical care. It aims to fix issues such as Women giving birth without assistance of
+                a skilled medical professional (17% in 2014-2020 were unassisted births).<br><a href="https://www.msf.org/">MSF</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>QUALITY EDUCATION</button>
+            <div class="content">
+              <p>Quality Education – Free education accessible to everyone without discrimination and with inclusion and fairness. To promote life-long learning. We need education to allow everyone to have the basic skills to live and learn such as
+                literacy and numeracy.<br><a href="https://cpag.org.uk/scotland">CPAG Scotland</a> </p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>GENDER EQUALITY</button>
+            <div class="content">
+              <p>Gender Equality – Have both genders have equal rights and empowering women. Many women are subject to violence and not as many opportunities as men would have. We need to allow women to have a better education, be able to get more
+                jobs and equal, to allow women in positions of power and to protect them from increasing domestic violence.<br><a href="http://www.dundeewomensaid.co.uk/ ">Dundee Women's Aid</a> </p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>CLEAN WATER AND SANITATION</button>
+            <div class="content">
+              <p>Ensure availability and sustainable management of water and sanitation for all – This development goal is very important because as of 2018 2.2 billion people were living in water-stressed regions. In the last century water usage has
+                been increasing at twice the rate of the population. It must be ensured that everyone has universal access to clean-safe water whether it be for drinking, washing or cleaning.<br><a href="https://www.wateraid.org/uk/">WaterAid</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>AFFORDABLE AND CLEAN ENERGY</button>
+            <div class="content">
+              <p>Ensure affordable, reliable, sustainable and modern energy for all – Even to this day one third of people still use dangerous and inefficient cooking systems. In 2019 1/10th of the population still did not have access to electricity,
+                given how important electricity is in todays connected world this statistic is quite staggering. Not only should we be aiming to provide electricity to people that don’t have it but should also be providing more sustainable and
+                efficient options to those that already have access.<br><a href="https://solar-aid.org/ ">SolarAid</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>DECENT WORK AND ECONOMIC GROWTH</button>
+            <div class="content">
+              <p>Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all – This goal is especially important after the pandemic as 4 times as many jobs have been lost during the Coronavirus
+                pandemic as in the 2007 global financial crisis (equiv. 255 million full-time jobs). In 2019 1 in 5 young people were not in any sort of employment (largely unchanged from 2005).<br><a href="https://www.jwj.org/">Jobs With Justice</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>INDUSTRY, INNOVATION AND INFRASTRUCTURE</button>
+            <div class="content">
+              <p>Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation – Aiming to make manufacturing a more sustainable and stable industry this goal is important as industry is key to a
+                functioning state, financially and for attaining useful resources. An industrially sound area leads to the ability to improve infrastructure.<br><a href="https://www.refugee-action.org.uk/ ">Refugee Action</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>REDUCED INEQUALITIES</button>
+            <div class="content">
+              <p>Reduce inequality within and among countries – It is hoped by 2030 the target of ensuring that the bottom 40% of each country's population is earning a rate above the national average. Also out of every 100,000 people 346 are
+                refugees seeking asylum.<br><a href="https://www.habitatforhumanity.org.uk/what-we-do/slum-rehabilitation/ ">Habitat For Humanity</a> </p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>SUSTAINABLE CITIES AND COMMUNITIES</button>
+            <div class="content">
+              <p>Make cities and human settlements inclusive, safe, resilient and sustainable – Worldwide more that 1 billion people live in slums, the majority of these being in Sub-Saharan Africa, Eastern & South-Eastern Asia and Central & Southern
+                Asia. This target aims to improve living conditions in cities and ensure that planning makes room for green spaces, utilities and adequate space between developments.<br><a
+                  href="https://www.keepbritaintidy.org/our-cause/end-waste">Keep Britain Tidy</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>RESPONSIBLE CONSUMPTION AND PRODUCTION</button>
+            <div class="content">
+              <p>Ensure sustainable consumption and production patterns – This aims to decrease carbon emissions by implementing further use of renewable energies (or non-CFC alternatives) and reduce waste. In 2019 each person produced 7.3 Kg of
+                electronic waste but only 1.7 Kg of that was recycled.<br><a href="https://www.coolearth.org/">Cool Earth</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>CLIMATE ACTION</button>
+            <div class="content">
+              <p>Take urgent action to combat climate change and its impacts* - leading on from goal 12 CFC emissions have led to an increase in global temperature 1.2°C above the pre-industrial baseline. This figure is far off track of the 1.5°C as
+                indicated by the Paris agreement.<br><a href="https://www.coolearth.org/">Cool Earth</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>LIFE BELOW WATER</button>
+            <div class="content">
+              <p>Conserve and sustainably use the oceans, seas and marine resources for sustainable development – This goal is especially important as over 3 billion people rely on the oceans for their livelihood. Since 2008 the amount of “dead
+                zones”, areas in the ocean where life is unsupported due to lack of oxygen, has increased from 400 to 700.<br><a href="https://oceanconservationtrust.org/ ">Ocean Conservation Trust</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>LIFE ON LAND</button>
+            <div class="content">
+              <p>Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss
+
+                – More than a quarter of species are endangered as habitat destruction is happening around the world due to deforestation and desertification.<br><a href=" https://www.wwf.org.uk/ ">WWF</a></p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>PEACE, JUSTICE AND STRONG INSTITUTIONS</button>
+            <div class="content">
+              <p>Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels – corruption is rife across the world, but it may be
+                shocking to hear that only 82 countries are in compliance with international standards for human rights. In 2020 331 human rights defenders were reported as killed.<br><a href="https://www.amnesty.org.uk/">Amnesty</a> </p>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <button type="button" class="collapsible"><img src="https://i.pinimg.com/736x/a8/e5/eb/a8e5eb4960d237e829094ca401450b4b.jpg" width="220" height="146" alt="Shack"><br>PARTNERSHIPS FOR THE GOALS</button>
+            <div class="content">
+              <p>Strengthen the means of implementation and revitalize the global partnership for sustainable development
+
+                – To improve a country’s economy, this goal is to strengthen international relations for trade and to increase exportation of goods made by industry and agriculture. This is important as in 2020 part - due to COVID-19 foreign direct
+                investment dropped by up to 40%.<br><a
+                  href="https://www.ncvo.org.uk/about-us/media-centre/press-releases/2834-the-civil-society-group-launches-to-increase-collaboration-between-charity-bodies-improve-efficiency-and-effectiveness-and-streamline-engagement-with-governments ">NCVO</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

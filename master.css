@@ -1,0 +1,111 @@
+/*Time for the appear animation to take place over.*/
+.w3-animation{
+  animation: opacity 0.5s;
+}
+
+/*Animation boundaries for the modal appearing when triggered.*/
+@keyframes opacity{
+  from{opacity: 0}
+  to{opacity: 1}
+}
+
+/*Header of page, set background colour, text alignment and width.*/
+header{
+  background-color : #000000;
+  width: 100%;
+  text-align: center;
+}
+
+main{
+  padding-top: 10px;
+}
+
+/*Set background of page.*/
+body{
+  background:linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),  url('DundeeBackdrop.jpg');
+  background-size: cover;
+}
+
+/*Set width, height, border radius and cursor type for marker.*/
+.marker{
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup-content{
+  text-align: center;
+  font-family:
+  font-family: 'Rubik', sans-serif;
+}
+
+/*Set height for container.*/
+.w3-container{
+  height:100%;
+}
+
+/*Sets the boundaries of the modal "backdrop" to take up the whole screen.*/
+.w3-modal{
+  position: absolute;
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*Enables word wrap for text, as well as height of the content box and its position.*/
+.w3-modal-content{
+  left: 23%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  word-wrap: break-word;
+  height:600px;
+  overflow:hidden;
+  background-color: #FFFFFF;
+}
+
+/*Sets background of header.*/
+.w3-modal-content header{
+  background-color: #eb1c2d;
+  text-align: left;
+}
+
+/*Sets height of header and image depicting the goal.*/
+.w3-modal-content header, img{
+  height:110px;
+}
+
+/*Set position and font of head title.*/
+.w3-modal-content h1{
+  padding-left: 120px;
+  padding-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*Set font family to Rubik for both itemDescription and itemDetails, as well as add some padding to the top.*/
+.w3-modal-content div{
+  padding-top: 10px;
+  font-family: 'Rubik', sans-serif;
+}
+
+/*Sets position, width and background of the item's description box, as well as the font size.*/
+.w3-white{
+  width:75%;
+  float:left;
+  font-size: 15px;
+}
+
+/*Set height, width and margin of map.*/
+#map{
+  height: 800px;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+/*Set display and margin of the title of page.*/
+#title{
+  display: inline-block;
+  margin: 0 auto;
+}

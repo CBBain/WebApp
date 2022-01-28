@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Metadata-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Page title-->
+  <title>Sustainable Development Goals</title>
+
+  <!--Links to stylesheets, fonts and API scripts.-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet'/>
+  <link rel="stylesheet" href="master.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Rubik&display=swap" rel="stylesheet">
+
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+</head>
+
+<body>
+  <!--Header of page.-->
+  <header>
+    <img id="title" src="sdg.png">
+  </header>
+
+  <!--Main body of page, which contains the map.-->
+  <main>
+    <div id='map'></div>
+  </main>
+
+  <div class="w3-container w3-center">
+
+    <!--The Modal itself.-->
+    <div id="id01" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #eb1c2d;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id01').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal1.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>Dundee Bairns</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/bairns1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>It is a stark reality that many low-income families struggle to provide meals during school holidays, as well as other basics for their children, such as clothing and stimulating opportunity.
+
+            This is especially prevalent in Dundee City where over 1/3 of children are living in poverty.
+
+            We are a children’s charity, supporting community projects that are in areas of high multiple deprivation to target the most vulnerable children.
+
+            Our primary cause is to challenge food inequality for children and to provide nutritious meals, as well as other basic needs, thus reducing pressure on parents to provide and helping to boost community cohesion.
+
+            We pride ourselves on being agile, responsive and adaptable to the provision of basic needs for children and families.
+
+          <p>(Excerpt from: https://dundeebairns.org/)</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Telephone No.: </span>07925 575233</p>
+          <p><span style="font-weight:600">Email: </span>info@dundeebairns.org</p>
+          <p><span style="font-weight:600">Address: </span></p>
+          <p>101 Whitfield Drive</p>
+          <p>Dundee</p>
+          <p>DD4 0DX</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/bairns2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id02" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #d3a029;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal2.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>Dundee Community Fridge</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/fridge1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>For those of you who don't know, Community Fridges are communal places where surplus food is shared, by local businesses and individuals. So far Community Fridges have helped thousands connect to their communities, access nutritious food, save money and reduce waste.
+            Our Dundee West End Community Fridge is located at Miller’s Wynd Car Park, Perth Road, Dundee DD1 4HY
+
+            The Fridge is open: 11am - 2pm, everyday</p>
+
+          <p>(Excerpt from: https://www.gatechurch.co.uk/communityfridge)</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Telephone No.: </span>01382 221222</p>
+          <p><span style="font-weight:600">Email: </span>info@gatechurch.co.uk</p>
+          <p><span style="font-weight:600">Postal Address: </span></p>
+          <p>Gate Church International</p>
+          <p>158 Perth Road</p>
+          <p>Dundee</p>
+          <p>DD1 4JA</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/fridge2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id03" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #279b48;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id03').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal3.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>Ancrum Outdoor Centre</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/ancrum1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>Experience the excitement of adventure activities with Ancrum Outdoor Centre. We offer great taster sessions, days out, skill development courses and coaching awards for people of all ages and abilities.
+
+            Over the past 40 years, our Centre has introduced thousands of people from Dundee, Tayside region and beyond to the thrill and excitement of many land and water based adventure activities and inspired people to find their sense of adventure.
+
+            Whether you are planning a special fun and memorable event for family and friends or looking to do something adventurous for your group, club, cadets, professional organisation or workplace, we can help you tailor your very own package which will always be great value for money.
+
+            We set really high customer service standards and will always go the extra mile to ensure your group have the best fun and safe time with us.
+
+            We offer a wide variety of public courses in our calendar section and we offer private bookings for friends, family and groups to create so you can have your very own bespoke adventure experience. To do this, simply give the Centre a call, Tel 01382 435911 and we will help you book up.
+
+            Our instructing team are at the top of their game and are highly experienced and qualified. We hold full Comprehensive Public & Employers Liability insurance and all activities and venues are fully risk assessed in order to make our activities safe and enjoyable.
+          </p>
+
+          <p>(Excerpt from: https://www.ancrum.com/)</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px; line-height: 1.2;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Telephone No.: </span>01382 435911</p>
+          <p><span style="font-weight:600">Email: </span>ancrum.centre@leisureandculturedundee.com</p>
+          <p><span style="font-weight:600">Address: </span></p>
+          <p>Ancrum Outdoor Centre</p>
+          <p>10 Ancrum Road</p>
+          <p>Dundee</p>
+          <p>DD2 2HZ</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/ancrum2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id04" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #c31f33;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id04').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal4.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>Dundee Central Library</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/library1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>http://www.leisureandculturedundee.com/library/central-library-wellgate</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Email: </span>central.library@leisureandculturedundee.com</p>
+          <p><span style="font-weight:600">Telephone No.: </span>01382 431500</p>
+          <p><span style="font-weight:600">Address: </span></p>
+          <p>Central Library</p>
+          <p>The Wellgate</p>
+          <p>Dundee</p>
+          <p>DD1 1DB</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/library2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id05" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #ef402b;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id05').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal5.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>International Women's Centre</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/woman1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>DIWC seeks to engage, educate and empower women from diverse ethnic and cultural backgrounds, to help them achieve their personal goals.
+
+            We provide educational, recreational and social activities, as well as employment training, information and advice services for disadvantaged and/or excluded women from over sixty countries.
+
+            DIWC works in partnership with many organisations to promote the personal development of women, by encouraging active participation, leadership and citizenship in society.
+
+            What do we do?
+            DIWC provides opportunities for marginalised and socially excluded women, with an emphasis on those from BME (Black and Minority Ethnic) and migrant communities, to reach their full potential and prosper in their communities.
+
+            DIWC is unique in Dundee as the only multicultural, 'women-only' organisation, which does not follow a single faith and/or cultural belief as part of the aim or service provision.
+
+            As a result of its many years of experience, DIWC has built a positive reputation within the communities it supports, being an organisation which is sensitive and respectful towards diverse cultural needs.
+
+            In order to meet our aims, DIWC provides a range of services such as: classes, social groups, informal and formal training, employment training, volunteering, events and issue based awareness-raising.
+
+            In addition, our social enterprise business, Rise and Shine Childcare, has gone from strength to strength and has provided thousands of employment opportunities to women across the city.
+
+            DIWC is a grassroots organisation and sees it future as continuing to provide and develop services led by community needs and underpinned by our values.
+          </p>
+
+          <p>(Excerpt from: https://diwc.co.uk/)</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Telephone No.: </span>01382 462058</p>
+          <p><span style="font-weight:600">Email: </span>mail@diwc.co.uk</p>
+          <p><span style="font-weight:600">Postal Address: </span></p>
+          <p>Unit 9</p>
+          <p>Manhattan Works</p>
+          <p>Dundonald St.</p>
+          <p>Dundee</p>
+          <p>DD3 7PY</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/woman2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id06" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #00aed9;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id06').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal6.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>Scottish Water</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/water1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>https://www.scottishwater.co.uk/</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Telephone No.: </span>08000 778778</p>
+          <p><span style="font-weight:600">Address: </span></p>
+          <p>84 Main St.</p>
+          <p>Invergowrie</p>
+          <p>Dundee</p>
+          <p>DD2 5BE</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/water2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id07" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #fdb713;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id07').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal7.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>Michelin Scotland Innovation Parc</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/parc1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>Michelin Scotland Innovation Parc (MSIP) is an ambitious joint venture between Michelin, Dundee City Council, and Scottish Enterprise, created to generate economic growth in Scotland and support a fair and just transition to a net zero economy.
+
+            With a 32-hectare site and excellent physical connectivity, we offer dynamic space for all sizes of businesses to locate. As well as large, flexible space, our tenants will have access to an innovation campus, a Skills Academy, business, innovation and skills support, and competitive, green energy delivered from sustainable sources.
+
+            We are committed to working in partnership with industry, academia, government and the local community to transform Dundee into a key location for innovation that will progress emerging technology for a greener future.
+          </p>
+
+          <p>(Excerpt from: https://www.msipdundee.com/)</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Email: </span>info@msipdundee.com</p>
+          <p><span style="font-weight:600">Address: </span></p>
+          <p>Michelin Scotland Innovation Parc</p>
+          <p>Baldovie Road</p>
+          <p>Dundee</p>
+          <p>DD4 8UQ</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/parc2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id08" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #8f1838;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id08').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal8.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>V&A Dundee</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/v&a1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>An international centre of design, V&A Dundee presents the brilliance of Scottish creativity and the best of design from around the world.
+            The first ever dedicated design museum in Scotland and the only other V&A museum anywhere in the world outside London, V&A Dundee provides a place of inspiration, discovery and learning through its mission to enrich lives through design.
+            https://www.vam.ac.uk/dundee/info/about</p>
+
+          <p>(Excerpt from: https://www.vam.ac.uk/dundee/)</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Telephone No.: </span>01382 411611</p>
+          <p><span style="font-weight:600">Postal Address: </span></p>
+          <p>1 Riverside Esplanade</p>
+          <p>Dundee</p>
+          <p>DD1 4EZ</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/v&a1.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id09" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #f36d20;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id09').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal9.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>MVV Environment</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/mvv1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>In November 2017, MVV entered into a contract with Dundee City and Angus Councils to manage their residual waste (that is waste left over after recyclable materials have been removed). It is a long-term contract under which MVV will take over and operate the existing energy from waste facility in Baldovie while building a new, modern facility next door.</p>
+
+          <p>The new facility will use around 110,000 tonnes of residual waste per year to generate electricity. It will also aim to fulfil the requirements of the Scottish Government’s hierarchical Zero Waste priorities on
+            1. reduce
+            2. reuse
+            3. recycling
+            4. recovery (of energy for example)
+            5. disposal</p>
+
+          <p>Planning permission was granted by Dundee City Council on 24th March 2017. In November 2020, SEPA approved MEB’s application to vary the environmental permit to allow parallel operation of the current facility and the new EfW CHP facility. Collectively, these facilities have created an additional 30 jobs on sites and have a capacity of processing approximately 200,000 tonnes of residual waste per annum.</p>
+
+          <p>(Excerpt from: https://www.mvv.de/en/about-us/group-of-companies/mvv-umwelt/subsidiaries/mvv-environment-ltd/baldovie-efw-chp-facility-dundee)</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Service Hotline: </span>06217 705555</p>
+          <p><span style="font-weight:600">Emergency Hotline: </span>08002 901000</p>
+          <p><span style="font-weight:600">Hotline for Professionals: </span>01805 290555</p>
+          <p><span style="font-weight:600">Postal Address: </span></p>
+          <p>MVV Energie AG</p>
+          <p>Luisenring 49</p>
+          <p>68159 Mannheim</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/mvv2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+
+
+    <!--The Modal itself.-->
+    <div id="id10" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content">
+
+        <!--Header box, the top of the modal popup.-->
+        <header class="w3-container" style="background-color: #e11484;">
+
+          <!--Close button for modal. Also includes the function for closing it.-->
+          <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id10').style.display='none'">&times;</span>
+
+          <!--Image on left of header.-->
+          <img src="goalicons/goal10.png" class="w3-display-topleft w3-small" alt="goal">
+
+          <!--Title.-->
+          <h1>Dundee Refugee Support</h1>
+        </header>
+
+        <!--Item Description box, the left 'column' of the modal popup.-->
+        <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+        <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/refugee1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+          <!--Description.-->
+          <p>Dundee Refugee Support is a local project by people living in Dundee. It is a registered charity under the umbrella name Dundee the Caring City and is based at our warehouse in the north of the city. We are entirely volunteer ran and regularly ship clothing and hygiene aid to refugee camps and distribution warehouses abroad. We also provide goods for all newly resettled families in Dundee who come up to the warehouse to get what they need when they arrive and beyond. We work with other local groups and beyond, to music labels and sports organisations. In the past two years, we have shipped containers of aid to Lebanon, Serbia, Greece and France and have contributed to many more including loads to Syria and Iraq. We wouldn’t exist if wasn’t for the tonnes and tonnes of donations we receive from the local community and the many hours everyone puts in!
+          </p>
+
+          <p>(Excerpt from: https://www.scottishrefugeecouncil.org.uk/places/dundee-refugee-support/)</p>
+        </div>
+
+        <!--Item Detail box, the right 'column' of the modal popup.-->
+        <!--Styling: Sets width for the details page.-->
+        <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+          <!--Details.-->
+          <p><span style="font-weight:600">Address: </span></p>
+          <p>Caring House, Block 31</p>
+          <p>Dunsinane Industrial Estate</p>
+          <p>Dundee</p>
+          <p>DD2 3QF</p>
+
+          <!--Image at the bottom of the box.-->
+          <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                       - Sets width for the image.-->
+          <img src="modalimages/refugee2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--The Modal itself.-->
+  <div id="id11" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content">
+
+      <!--Header box, the top of the modal popup.-->
+      <header class="w3-container" style="background-color: #f99e21;">
+
+        <!--Close button for modal. Also includes the function for closing it.-->
+        <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id11').style.display='none'">&times;</span>
+
+        <!--Image on left of header.-->
+        <img src="goalicons/goal11.png" class="w3-display-topleft w3-small" alt="goal">
+
+        <!--Title.-->
+        <h1>Dundee Cycle Hub</h1>
+      </header>
+
+      <!--Item Description box, the left 'column' of the modal popup.-->
+      <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+      <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/cycle1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+        <!--Description.-->
+        <p>We are an award winning social enterprise!
+          Angus Cycle Hub Community Interest Company (CIC) is a not for profit social enterprise dedicated to supporting Cycling and Active Travel.
+
+          The project encourages people to lead healthier lives and reduce short car journeys and C02 emissions through cycling and recycling.
+
+          Formed in 2013 the company was officially registered and incorporated as a CIC in January 2014.
+        </p>
+
+        <p>(Excerpt from: https://www.anguscyclehub.org/dundee-cycle-hub)</p>
+      </div>
+
+      <!--Item Detail box, the right 'column' of the modal popup.-->
+      <!--Styling: Sets width for the details page.-->
+      <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+        <!--Details.-->
+        <p><span style="font-weight:600">Telephone No.: </span>01382 339491</p>
+        <p><span style="font-weight:600">Email: </span>info@dundeecyclehub.org</p>
+        <p><span style="font-weight:600">Address: </span></p>
+        <p>Dundee Cycle Hub</p>
+        <p>Waterfront Place</p>
+        <p>Riverside Esplanade </p>
+        <p>Dundee</p>
+        <p>DD1 4EZ</p>
+
+        <!--Image at the bottom of the box.-->
+        <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                     - Sets width for the image.-->
+        <img src="modalimages/cycle2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--The Modal itself.-->
+<div id="id12" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content">
+
+    <!--Header box, the top of the modal popup.-->
+    <header class="w3-container" style="background-color: #cf8d2a;">
+
+      <!--Close button for modal. Also includes the function for closing it.-->
+      <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id12').style.display='none'">&times;</span>
+
+      <!--Image on left of header.-->
+      <img src="goalicons/goal12.png" class="w3-display-topleft w3-small" alt="goal">
+
+      <!--Title.-->
+      <h1>ScrapAntics</h1>
+    </header>
+
+    <!--Item Description box, the left 'column' of the modal popup.-->
+    <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+    <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/scrap1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+      <!--Description.-->
+      <p>Scrapantics benefits from the hard work of a broad range of people from all over Dundee. These include playworkers, project coordinators, play session workers and artists, as well as our fantastic volunteers.
+
+        Scrapantics can provide everything from training, planning, support with risk assessments, art workshops, play sessions (in and out of school) as well as observation and reporting. This service is designed to help parents, teachers and childcare providers with every part of facilitating alternative education, from planning at the beginning of a project to reporting at the end, including everything in between!
+
+        Our Scrapstore lies at the heart of Scrapantics – it’s our first point of contact with the public. Run with the help of our volunteers, this is where our wonderful range of recycled resources are sorted, processed and sold. Here you can find a constantly evolving stock of materials ranging from wood and hand tools to paper, fabric, yarn, card and stationery. If you look hard enough, you’re also bound to find some unusual and fascinating oddities!
+
+        At the Scrapstore we aim to celebrate and promote anything that is happening locally. If you speak to our staff, you will be able to find out about all manner of projects and opportunities in which you can participate. Our store is an invaluable resource for artists, theatres, parents with young children, DIY fanatics – anyone with an interest in creating something while recycling at the same time!
+      </p>
+
+      <p>(Excerpt from: https://scrapantics.co.uk/)</p>
+    </div>
+
+    <!--Item Detail box, the right 'column' of the modal popup.-->
+    <!--Styling: Sets width for the details page.-->
+    <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+      <!--Details.-->
+      <p><span style="font-weight:600">Address: </span></p>
+      <p>UNIT 2</p>
+      <p>MEADOW MILL</p>
+      <p>WEST HENDERSONS WYND</p>
+      <p>DUNDEE</p>
+      <p>DD1 5BY</p>
+
+      <!--Image at the bottom of the box.-->
+      <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                   - Sets width for the image.-->
+      <img src="modalimages/scrap2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--The Modal itself.-->
+<div id="id13" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content">
+
+    <!--Header box, the top of the modal popup.-->
+    <header class="w3-container" style="background-color: #46783c;">
+
+      <!--Close button for modal. Also includes the function for closing it.-->
+      <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id13').style.display='none'">&times;</span>
+
+      <!--Image on left of header.-->
+      <img src="goalicons/goal13.png" class="w3-display-topleft w3-small" alt="goal">
+
+      <!--Title.-->
+      <h1>Dundee Community Wardrobe</h1>
+    </header>
+
+    <!--Item Description box, the left 'column' of the modal popup.-->
+    <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+    <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/wardrobe1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+      <!--Description.-->
+      <p>Our 'Community Wardrobe' aims to encouraging more people to REUSE, REPAIR & SHARE. We have a selection of clothes, accessories and household items for adults, a small selection of children's clothing, as well as some other seasonal bits and bobs! We would appreciate a small donation for the items you take on a ‘pay as you feel’ basis, if you are able, which helps us to continue the work we are doing. We have contactless payment facilities and can also accept cash. We are open every Friday 12pm-4pm and the same times on the last Saturday of the month.</p>
+
+      <p>(Excerpt from: https://www.gatechurch.co.uk/communitywardrobe)</p>
+    </div>
+
+    <!--Item Detail box, the right 'column' of the modal popup.-->
+    <!--Styling: Sets width for the details page.-->
+    <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+      <!--Details.-->
+      <p><span style="font-weight:600">Telephone No.: </span>01382 221222</p>
+      <p><span style="font-weight:600">Email: </span>info@gatechurch.co.uk</p>
+      <p><span style="font-weight:600">Address: </span></p>
+      <p>Gate Church International </p>
+      <p>158 Perth Road</p>
+      <p>Dundee</p>
+      <p>DD1 4JA</p>
+
+      <!--Image at the bottom of the box.-->
+      <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                   - Sets width for the image.-->
+      <img src="modalimages/wardrobe2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--The Modal itself.-->
+<div id="id14" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content">
+
+    <!--Header box, the top of the modal popup.-->
+    <header class="w3-container" style="background-color: #007dbc;">
+
+      <!--Close button for modal. Also includes the function for closing it.-->
+      <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id14').style.display='none'">&times;</span>
+
+      <!--Image on left of header.-->
+      <img src="goalicons/goal14.png" class="w3-display-topleft w3-small" alt="goal">
+
+      <!--Title.-->
+      <h1>Broughty Ferry Flood Protection Scheme</h1>
+    </header>
+
+    <!--Item Description box, the left 'column' of the modal popup.-->
+    <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+    <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/broughty1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+      <!--Description.-->
+      <p>MORE THAN a kilometre of new measures to protect a Dundee community fromflooding have been completed on time and in budget.
+
+      Just short of 12 months after starting on site at Douglas Terrace, Broughty Ferry contractors McLaughlin and Harvey have finished the first of nine areas of street works.
+
+      Since work started on June 1 last year 800m of rotary bored pile and 180m of sheet piling has been put in along with the construction of 800m of the sea defence wall and 400m of natural stone set back wall.</p>
+
+      <p>(Excerpt from: https://www.dundeecity.gov.uk/news/article?article_ref=3949)</p>
+    </div>
+
+    <!--Item Detail box, the right 'column' of the modal popup.-->
+    <!--Styling: Sets width for the details page.-->
+    <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+      <!--Details.-->
+      <p><span style="font-weight:600">This plan spans across the whole of Dundee!</span></p>
+
+      <!--Image at the bottom of the box.-->
+      <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                   - Sets width for the image.-->
+      <img src="modalimages/broughty2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--The Modal itself.-->
+<div id="id15" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content">
+
+    <!--Header box, the top of the modal popup.-->
+    <header class="w3-container" style="background-color: #3eb049;">
+
+      <!--Close button for modal. Also includes the function for closing it.-->
+      <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id15').style.display='none'">&times;</span>
+
+      <!--Image on left of header.-->
+      <img src="goalicons/goal15.png" class="w3-display-topleft w3-small" alt="goal">
+
+      <!--Title.-->
+      <h1>Camperdown Wildlife Centre</h1>
+    </header>
+
+    <!--Item Description box, the left 'column' of the modal popup.-->
+    <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+    <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/camperdown1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+      <!--Description.-->
+      <p>Fancy a fun family out with lots of amazing animals? Then you are in the right place ... Camperdown Wildlife Centre is open all year round and we have lots of happy animals that are looking forward to your visit. So come and explore Camperdown Wildlife Centre with us!
+
+        You will find us within the beautiful Camperdown Country Park, just 15 minutes away from Dundee City Centre; click here for more information about how to get here.
+
+        We have lots of great facilities, including a fantastic cafe and shop, so we can guarantee that the whole family will enjoy their day out with us.
+
+        If you love animals and love visiting Camperdown Wildlife Centre - then why not become a friend!</p>
+
+      <p>(Excerpt from: https://www.camperdownwildlifecentre.co.uk/taxonomy/term/28)</p>
+    </div>
+
+    <!--Item Detail box, the right 'column' of the modal popup.-->
+    <!--Styling: Sets width for the details page.-->
+    <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+      <!--Details.-->
+      <p><span style="font-weight:600">Telephone No.: </span>01382 431811</p>
+      <p><span style="font-weight:600">Email: </span>info@camperdownwildlifecentre.com</p>
+      <p><span style="font-weight:600">Address: </span></p>
+      <p>Camperdown Wildlife Centre</p>
+      <p>Camperdown Country Park</p>
+      <p>Coupar Angus Road</p>
+      <p>Dundee</p>
+      <p>DD2 4TF</p>
+
+      <!--Image at the bottom of the box.-->
+      <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                   - Sets width for the image.-->
+      <img src="modalimages/camperdown2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--The Modal itself.-->
+<div id="id16" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content">
+
+    <!--Header box, the top of the modal popup.-->
+    <header class="w3-container" style="background-color: #02558b;">
+
+      <!--Close button for modal. Also includes the function for closing it.-->
+      <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id16').style.display='none'">&times;</span>
+
+      <!--Image on left of header.-->
+      <img src="goalicons/goal16.png" class="w3-display-topleft w3-small" alt="goal">
+
+      <!--Title.-->
+      <h1>One World Centre</h1>
+    </header>
+
+    <!--Item Description box, the left 'column' of the modal popup.-->
+    <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+    <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/oneworld1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+      <!--Description.-->
+      <p>The Centre was established in 1984 and our current focus is Education for Global Citizenship. We are a part of the International Development Education Association of Scotland (IDEAS) – a network of organisations and individuals involved in Development Education and Education for Global Citizenship across Scotland.
+
+      Our aims are to:
+      Increase understanding of issues of global, social and environmental justice.
+      Explore the links between our lives and those of people throughout the world.
+      Enable action for a fairer, more peaceful and sustainable world.
+      Foster skills, values and attitudes to enhance understanding of how our choices affect others.
+
+      What we can offer:
+      The Centre works in partnership with schools, higher and further education establishments, youth and adult community workers to support and encourage global learning. We offer help to embed Global Citizenship and Learning for Sustainability through:
+    </p>
+
+      <p>(Excerpt from: https://oneworldcentre.org.uk/about/)</p>
+    </div>
+
+    <!--Item Detail box, the right 'column' of the modal popup.-->
+    <!--Styling: Sets width for the details page.-->
+    <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+      <!--Details.-->
+      <p><span style="font-weight:600">Email: </span>admin@oneworldcentre.org.uk</p>
+      <p><span style="font-weight:600">Address: </span></p>
+      <p>189 Princes St</p>
+      <p>Dundee</p>
+      <p>DD4 6DQ</p>
+
+      <!--Image at the bottom of the box.-->
+      <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                   - Sets width for the image.-->
+      <img src="modalimages/oneworld2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--The Modal itself.-->
+<div id="id17" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content">
+
+    <!--Header box, the top of the modal popup.-->
+    <header class="w3-container" style="background-color: #02558b;">
+
+      <!--Close button for modal. Also includes the function for closing it.-->
+      <span class="w3-button w3-large w3-display-topright close" onclick="document.getElementById('id17').style.display='none'">&times;</span>
+
+      <!--Image on left of header.-->
+      <img src="goalicons/goal17.png" class="w3-display-topleft w3-small" alt="goal">
+
+      <!--Title.-->
+      <h1>University of Dundee</h1>
+    </header>
+
+    <!--Item Description box, the left 'column' of the modal popup.-->
+    <!--Styling: Sets background image and its opacity, as well as properly sizing it.-->
+    <div style="background:linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('modalimages/uni1.jpg'); background-size: cover;" class="w3-container w3-white">
+
+      <!--Description.-->
+      <p>In Dundee in 1881, Miss Mary Ann Baxter and her cousin, John Boyd Baxter - two of the famous Baxter family, who made their money from the Jute mills of the city - donated £140,000 to the creation of a college in Dundee. This was the beginning of the University of Dundee.
+
+        From the start it was an institution that stood out. Instead of professors with ivory tower backgrounds, it employed bright young people who realised that to compete in the modern world, Great Britain needed to improve its technological output. William Peterson, who was a Latinist and Scholar, became the inaugural Principal in 1882 at the tender age of 26. Patrick Geddes, who didn’t have a degree, was professor of botany and one of the foremost thinkers in the world.
+
+        Central to the institution's founding deed was that it should be used for "promoting the education of persons of both sexes, and the study of science, literature, and the fine arts”.</p>
+
+      <p>(Excerpt from: https://www.dundee.ac.uk/stories/road-independence-1881-1967)</p>
+    </div>
+
+    <!--Item Detail box, the right 'column' of the modal popup.-->
+    <!--Styling: Sets width for the details page.-->
+    <div class="w3-container" style="width:25%; float:right; font-size: 13px;">
+
+      <!--Details.-->
+      <p><span style="font-weight:600">Address: </span></p>
+      <p>University of Dundee</p>
+      <p>Nethergate</p>
+      <p>Dundee</p>
+      <p>DD1 4HN</p>
+
+      <!--Image at the bottom of the box.-->
+      <!--Styling: - Sets the height to auto so it isn't squished due to the width.
+                   - Sets width for the image.-->
+      <img src="modalimages/uni2.jpg" class="w3-display-bottomright w3-small" style="width:25%; height: auto" alt="detail">
+    </div>
+  </div>
+</div>
+</div>
+
+  <!--Script call for JavaScript file.-->
+  <script src="master.js"></script>
+</body>
+
+</html>
