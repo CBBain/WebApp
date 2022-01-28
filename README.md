@@ -1,1 +1,1 @@
-WebApp Host: https://cbbain.github.io/WebApp/sustainable.html
+WebApp Host: https://cbbain.github.io/WebApp
