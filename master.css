@@ -103,9 +103,3 @@ body{
   margin: auto;
   margin-bottom: 40px;
 }
-
-/*Set display and margin of the title of page.*/
-#title{
-  display: inline-block;
-  margin: 0 auto;
-}
